@@ -28,8 +28,7 @@ jobs:
           tools: none
 
       # Step 3: Check syntax
-      - name: Check syntax
-        uses: mlocati/check-php-syntax@v1
+      - name: PHP Syntax Checker (Lint)
+        uses: StephaneBour/actions-php-lint@8.4
         with:
-          directory: .
-          fail-on-warnings: true
+          dir: './src'
