@@ -29,6 +29,6 @@ jobs:
 
       # Step 3: Check syntax
       - name: PHP Syntax Checker (Lint)
-        uses: StephaneBour/actions-php-lint@8.4
+        uses: StephaneBour/actions-php-lint@8.3
         with:
-          dir: './src'
+          dir: .
