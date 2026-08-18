@@ -5,14 +5,12 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
   pull_request:
       - main
-      
+
 jobs:
     build:
-      runs-on: ubuntu-latest    
+      runs-on: ubuntu-latest
     steps:
       # Step 1: Setup PHP
       - name: Setup PHP
@@ -25,16 +23,10 @@ jobs:
           tools: none
        # Step 2: Checkout
       - name: Checkout
-        uses: actions/checkout@v4       
+        uses: actions/checkout@v4
        # Step 3: Checkout Code
       - name: Check syntax
         uses: mlocati/check-php-syntax@v1
         with:
           directory: .
-          include: |
-            bin/entrypoint1
-            bin/entrypoint2
-          exclude: |
-            tests/shim1
-            tests/shim2
           fail-on-warnings: true
